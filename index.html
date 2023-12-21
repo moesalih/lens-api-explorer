@@ -66,7 +66,7 @@
     <script>
       const root = ReactDOM.createRoot(document.getElementById('graphiql'));
       const fetcher = GraphiQL.createFetcher({
-        url: 'https://api-v2.lens.dev/',
+        url: new URLSearchParams(window.location.search).get('url') || 'https://api-v2.lens.dev/',
         // headers: { 'X-Example-Header': 'foo' },
       });
       const explorerPlugin = GraphiQLPluginExplorer.explorerPlugin();
